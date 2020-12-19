@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 
 {% block content %}
-<h3>Post me a river</h3>
+<h3 class="mt-5">Post me a river</h3>
 <form method="POST" action="/create">
     {{form.hidden_tag()}}
     <div class="form-group">
@@ -18,7 +18,7 @@
     </div>
     <button type="submit" class="btn btn-primary mt-5">Submit</button>
 </form>
-<h3>Post random entry</h3>
+<h3 class="mt-5">Post random stuff</h3>
 <form method="POST" action="/random">
     {{form.hidden_tag()}}
     <button type="submit" class="btn btn-primary mt-5">I'm lazy</button>
