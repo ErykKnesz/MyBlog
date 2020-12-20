@@ -69,21 +69,19 @@ def edit_entry(entry_id):
     return create_or_edit_entry(entry_id, entry, form)
 
 
-
 @app.route("/random/<entry_id>", methods=['POST'])
 def generate_entry(entry_id):
     fake = Faker()
+    form = EntryForm()
+    form.title.data = fake.sentence()
+    form.body.data = '\n'.join(fake.paragraphs(15))
     try:
         int(entry_id)
         entry = Entry.query.filter_by(id=entry_id).first_or_404()
-        form = EntryForm(obj=entry)
         if form.validate_on_submit():
-            entry.title = fake.sentence()
-            entry.body = '\n'.join(fake.paragraphs(15))
+            entry.title = form.title.data
+            entry.body = form.body.data
     except ValueError:
-        form = EntryForm()
-        form.title.data = fake.sentence()
-        form.body.data = '\n'.join(fake.paragraphs(15))
         if form.validate_on_submit():
             entry = Entry(
                 title=form.title.data,
