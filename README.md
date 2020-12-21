@@ -7,7 +7,11 @@
 4. Run blog.py
 
 # How to create or edit posts
-You will need to log in using preconfigured environmental variables ADMIN_USERNAME, ADMIN_PASSWORD
+>You will need to log in using preconfigured environmental variables ADMIN_USERNAME, ADMIN_PASSWORD  
+>You can post random stuff with the "I'm lazy" button - it will generate random title and body by use of the Faker module.
 
 # Deployed on Heroku
-link: 
+>link: 
+
+# Note on dependencies
+>This little blog app uses Flask microframework, Flask WTForms to edit or create posts, Flask-SQLAlchemy to store them. Templates utilies the Jinja language.
