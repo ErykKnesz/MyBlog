@@ -14,4 +14,4 @@
 >link: 
 
 # Note on dependencies
->This little blog app uses Flask microframework, Flask WTForms to edit or create posts, Flask-SQLAlchemy to store them. Templates utilies the Jinja language.
+>This little blog app uses Flask microframework, Flask WTForms to edit or create posts, Flask-SQLAlchemy to store them. Templates use the Jinja language.
