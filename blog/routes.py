@@ -16,7 +16,7 @@ def create_or_edit_entry(entry_id, entry, form):
         elif form.validate_on_submit():
             db.session.add(entry)
             db.session.commit()
-            flash(f"Yeah, thanks!", 'success')
+            flash("Yeah, thanks!", 'success')
         else:
             errors = form.errors
             flash(f"Oops... See the following errors: {errors}", 'error')
@@ -101,20 +101,21 @@ def delete_entry(draft_id):
     flash(f'Successfully deleted entry {draft.title}.', 'success')
     return redirect(url_for('homepage'))
 
+
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-   form = LoginForm()
-   errors = None
-   next_url = request.args.get('next')
-   if request.method == 'POST':
-       if form.validate_on_submit():
-           session['logged_in'] = True
-           session.permanent = True  # Use cookie to store session.
-           flash('You are now logged in.', 'success')
-           return redirect(next_url or url_for('homepage'))
-       else:
-           errors = form.errors
-   return render_template("login_form.html", form=form, errors=errors)
+    form = LoginForm()
+    errors = None
+    next_url = request.args.get('next')
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            session['logged_in'] = True
+            session.permanent = True  # Use cookie to store session.
+            flash('You are now logged in.', 'success')
+            return redirect(next_url or url_for('homepage'))
+        else:
+            errors = form.errors
+    return render_template("login_form.html", form=form, errors=errors)
 
 
 @app.route('/logout/', methods=['GET'])
