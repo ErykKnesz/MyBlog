@@ -11,7 +11,7 @@
 >You can post random stuff with the "I'm lazy" button - it will generate random title and body by use of the Faker module.
 
 # Deployed on Heroku
->link: 
+>link: https://eryksblog.herokuapp.com/
 
 # Note on dependencies
 >This little blog app uses Flask microframework, Flask WTForms to edit or create posts, Flask-SQLAlchemy to store them. Templates use the Jinja language.
