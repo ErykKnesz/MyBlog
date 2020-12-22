@@ -12,3 +12,6 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME")
     ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
+
+config = Config()
+print(config.SQLALCHEMY_DATABASE_URI)
